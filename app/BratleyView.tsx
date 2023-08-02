@@ -20,14 +20,13 @@ export default function BratleyView({
   bratleyBreadths: Array<Array<BratleyTask>>;
   viewHeight: number;
 }) {
-  const dummySet = [1];
   const [offsetX, setOffsetX] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
   const [scaleFactor, setScaleFactor] = useState(1);
 
   const deltaYDampener = 0.0001;
   function handleWheel(e: WheelEvent) {
-    setScaleFactor((scaleFactor) => (scaleFactor += e.deltaY * deltaYDampener));
+    setScaleFactor((scaleFactor) => (scaleFactor -= e.deltaY * deltaYDampener));
   }
 
   const movementXDampener = 1;

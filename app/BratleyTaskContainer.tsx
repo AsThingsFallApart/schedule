@@ -17,9 +17,11 @@ interface BratleyTask {
 export default function BratleyTaskContainer({
   task,
   height,
+  isLastRow,
 }: {
   task: BratleyTask;
   height: number;
+  isLastRow: boolean;
 }) {
   const visibility = task.feasible ? "visible" : "hidden";
 
@@ -27,7 +29,7 @@ export default function BratleyTaskContainer({
   const bratleyTaskContainerStyle = {
     height: `${height}vh`,
     width: `${height}vh`,
-    visibility: `${visibility}`,
+    // visibility: `${visibility}`,
   };
 
   return (
@@ -45,6 +47,7 @@ export default function BratleyTaskContainer({
         taskIdentifier={task.name.substring(1)}
         taskHeight={height - 2}
         isFeasible={task.feasible}
+        isLastRow={isLastRow}
       />
     </div>
   );

@@ -16,14 +16,21 @@ interface BratleyTask {
 export default function BratleyTaskRow({
   breadth,
   taskHeight,
+  isLastRow,
 }: {
   breadth: Array<BratleyTask>;
   taskHeight: number;
+  isLastRow: boolean;
 }) {
   return (
     <div className={styles.bratleyTaskRow}>
       {breadth.map((task, taskIndex) => (
-        <BratleyTaskContainer key={taskIndex} task={task} height={taskHeight} />
+        <BratleyTaskContainer
+          key={taskIndex}
+          task={task}
+          height={taskHeight}
+          isLastRow={isLastRow}
+        />
       ))}
     </div>
   );

@@ -31,18 +31,30 @@ export default function BratleyGraph({
     transform: `translateX(${offsetX}px) translateY(${offsetY}px) scale(${scaleFactor})`,
   };
 
-  // console.log("bratleyBreadths(in BratleyGraph):");
-  // console.dir(bratleyBreadths);
+  console.log("bratleyBreadths(in BratleyGraph):");
+  console.dir(bratleyBreadths);
 
   return (
     <div className={styles.bratleyGraph} style={bratleyGraphStyle}>
       <BratleyRoot height={taskHeights - 2} />
       {bratleyBreadths.map((breadth, breadthIndex) => (
-        <BratleyTaskRow
-          key={breadthIndex}
-          breadth={breadth}
-          taskHeight={taskHeights}
-        />
+        <>
+          {breadthIndex === bratleyBreadths.length - 1 ? (
+            <BratleyTaskRow
+              key={breadthIndex}
+              breadth={breadth}
+              taskHeight={taskHeights}
+              isLastRow={true}
+            />
+          ) : (
+            <BratleyTaskRow
+              key={breadthIndex}
+              breadth={breadth}
+              taskHeight={taskHeights}
+              isLastRow={false}
+            />
+          )}
+        </>
       ))}
     </div>
   );

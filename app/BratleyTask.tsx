@@ -20,11 +20,13 @@ export default function BratleyTask({
   taskIdentifier,
   taskHeight,
   isFeasible,
+  isLastRow,
 }: {
   task: BratleyTask;
   taskIdentifier: string;
   taskHeight: number;
   isFeasible: boolean;
+  isLastRow: boolean;
 }) {
   const textColor = isFeasible ? "black" : "red";
   const [isInfoPopoverVisible, setIsInfoPopoverVisible] = useState(false);
@@ -69,10 +71,17 @@ export default function BratleyTask({
     // popoverRef.current.remove();
   }
 
+  const outline =
+    isLastRow && isFeasible ? "1px solid black" : "0px solid transparent";
+
+  const outlineOffset = isLastRow && isFeasible ? "-5px" : "0px";
+
   const bratleyTaskStyle = {
     height: `${taskHeight}vh`,
     width: `${taskHeight}vh`,
     backgroundColor: `${backgroundColor}`,
+    outline: `${outline}`,
+    outlineOffset: `${outlineOffset}`,
   };
 
   return (
