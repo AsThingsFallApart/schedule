@@ -26,6 +26,7 @@ export default function BratleyTaskRow({
   id,
   allBreadths,
   setConnections,
+  areUnfeasibleShown,
 }: {
   breadth: Array<BratleyTask>;
   taskHeight: number;
@@ -33,6 +34,7 @@ export default function BratleyTaskRow({
   id: number;
   allBreadths: Array<Array<BratleyTask>>;
   setConnections: Dispatch<SetStateAction<Array<Array<ScreenCoord>>>>;
+  areUnfeasibleShown: boolean;
 }) {
   useEffect(() => {
     let nextAllCoords: Array<Array<ScreenCoord>> = [];
@@ -69,6 +71,7 @@ export default function BratleyTaskRow({
           task={task}
           height={taskHeight}
           isLastRow={isLastRow}
+          areUnfeasibleShown={areUnfeasibleShown}
         />
       ))}
     </div>

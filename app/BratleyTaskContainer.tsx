@@ -18,18 +18,24 @@ export default function BratleyTaskContainer({
   task,
   height,
   isLastRow,
+  areUnfeasibleShown,
 }: {
   task: BratleyTask;
   height: number;
   isLastRow: boolean;
+  areUnfeasibleShown: boolean;
 }) {
-  const visibility = task.feasible ? "visible" : "hidden";
+  let visibility: string = "visible";
+
+  if (!task.feasible) {
+    visibility = areUnfeasibleShown ? "visible" : "hidden";
+  }
 
   const worstCaseCompTimeStyle = {};
   const bratleyTaskContainerStyle = {
     height: `${height}vh`,
     width: `${height}vh`,
-    // visibility: `${visibility}`,
+    visibility: `${visibility}`,
   };
 
   return (

@@ -45,6 +45,7 @@ export default function BratleyGraph({
   const [organizedConnections, setOrganizedConnections] = useState(
     Array<Array<Array<LineSet>>>
   );
+  const [areUnfeasibleShown, setAreUnfeasibleShown] = useState(true);
 
   useEffect(() => {
     const height: number = document.getElementById("-99")?.clientHeight ?? 0;
@@ -74,8 +75,25 @@ export default function BratleyGraph({
     }
   }
 
+  function hideUnfeasibleTasks() {
+    setAreUnfeasibleShown(
+      (areUnfeasibleShown) => (areUnfeasibleShown = !areUnfeasibleShown)
+    );
+  }
+
   return (
     <div className={styles.bratleyGraph} style={bratleyGraphStyle} id={"-99"}>
+      <div
+        style={{
+          height: "50px",
+          width: "50px",
+          backgroundColor: "grey",
+          position: "absolute",
+          top: "0px",
+          left: "0px",
+        }}
+        onClick={hideUnfeasibleTasks}
+      ></div>
       <BratleyRoot height={taskHeights - 2} />
       {bratleyBreadths.map((breadth, breadthIndex) => (
         <Fragment key={breadthIndex}>
@@ -88,6 +106,7 @@ export default function BratleyGraph({
               id={breadthIndex + 1}
               allBreadths={bratleyBreadths}
               setConnections={setConnections}
+              areUnfeasibleShown={areUnfeasibleShown}
             />
           ) : (
             <BratleyTaskRow
@@ -98,6 +117,7 @@ export default function BratleyGraph({
               id={breadthIndex + 1}
               allBreadths={bratleyBreadths}
               setConnections={setConnections}
+              areUnfeasibleShown={areUnfeasibleShown}
             />
           )}
         </Fragment>
