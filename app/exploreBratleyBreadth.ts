@@ -18,10 +18,10 @@ export function exploreBratleyBreadth(
   const numOriginalTasks = originalTaskSet.length;
   const numCurrentTasks = currentTaskSet.length;
 
-  console.log("originalTaskSet:");
-  console.dir(originalTaskSet);
-  console.log("currenTaskSet:");
-  console.dir(currentTaskSet);
+  // console.log("originalTaskSet:");
+  // console.dir(originalTaskSet);
+  // console.log("currenTaskSet:");
+  // console.dir(currentTaskSet);
 
   // explore all possible paths:
   //  calculate theicurrentTaskSetr worstCaseCompTime:
@@ -33,7 +33,7 @@ export function exploreBratleyBreadth(
   for (let i = 0; i < numCurrentTasks; i++) {
     // calculate worstCaseCompTime and feasibility for all tasks
     // that are not predeccesors or current task
-    console.log(`i:\t${i}`);
+    // console.log(`i:\t${i}`);
 
     for (let j = 0; j < numOriginalTasks; j++) {
       const currentTaskName = parseInt(
@@ -47,8 +47,7 @@ export function exploreBratleyBreadth(
         !currentTaskSet[i].predecessorNames.includes(nextSpawnedTaskName) &&
         nextSpawnedTaskName !== currentTaskName
       ) {
-        console.log(`j:\t${j}`);
-        console.log(`currentTaskSet[${j}]:\t${currentTaskSet[j]}`);
+        // console.log(`j:\t${j}`);
         let nextWorstCaseCompTime = 0;
 
         for (
