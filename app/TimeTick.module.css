@@ -1,0 +1,21 @@
+.timeTickContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 10px;
+}
+
+.timeTick {
+  background-color: black;
+  /* border-radius: 20%; */
+}
+
+.timeTickLabel {
+  font-size: x-large;
+  width: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

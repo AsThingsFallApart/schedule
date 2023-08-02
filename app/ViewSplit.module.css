@@ -1,0 +1,4 @@
+.viewSplit {
+  display: grid;
+  grid-template-rows: 70vh 30vh;
+}

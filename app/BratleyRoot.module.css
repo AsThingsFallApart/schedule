@@ -1,0 +1,7 @@
+.bratleyRoot {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  background-color: lavender;
+  border: 1px solid black;
+}

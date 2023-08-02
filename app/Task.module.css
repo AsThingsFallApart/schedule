@@ -1,0 +1,16 @@
+@keyframes pulse {
+  0% {
+    background-color: lavender;
+  }
+  100% {
+    background-color: var(--lightGreyishViolet);
+  }
+}
+
+.task {
+  background-color: lavender;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

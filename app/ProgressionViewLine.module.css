@@ -1,0 +1,16 @@
+@keyframes slideFade {
+  from {
+    color: #00000000;
+    /* transform: translateX(-2vw); */
+  }
+
+  to {
+    color: #000000ff;
+    /* transform: translateX(0vw); */
+  }
+}
+
+.line {
+  font-size: x-large;
+  animation: 200ms forwards ease-in slideFade;
+}

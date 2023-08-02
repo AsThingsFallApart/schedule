@@ -1,0 +1,17 @@
+@keyframes pulse {
+  0% {
+    color: black;
+  }
+  100% {
+    color: violet;
+  }
+}
+
+.taskTableElement {
+  font-size: x-large;
+}
+
+.taskTableElementSub {
+  font-size: x-large;
+  vertical-align: sub;
+}

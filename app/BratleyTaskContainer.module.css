@@ -1,0 +1,8 @@
+.bratleyTaskContainer {
+  contain: strict;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}

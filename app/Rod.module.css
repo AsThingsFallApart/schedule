@@ -1,0 +1,7 @@
+.rod {
+  background-color: black;
+  height: 1.5vh;
+  width: 0.3vh;
+  border-radius: 30%;
+  position: fixed;
+}

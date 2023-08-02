@@ -1,0 +1,26 @@
+@keyframes lightUp {
+  0% {
+    background-color: var(--grey);
+  }
+  100% {
+    background-color: var(--lightGrey);
+  }
+}
+
+.button {
+  background-color: var(--grey);
+  height: 2vh;
+  width: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  z-index: 0;
+}
+
+.rodContainer {
+  contain: strict;
+  height: 1.5vh;
+  width: 1.5vh;
+}

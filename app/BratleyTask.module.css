@@ -1,0 +1,12 @@
+.bratleyTask {
+  height: 7vh;
+  width: 7vh;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lavender;
+  border: 1px solid black;
+  z-index: 0;
+}

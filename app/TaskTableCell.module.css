@@ -1,0 +1,19 @@
+@keyframes flash {
+  0% {
+    background-color: var(--grey);
+  }
+  100% {
+    background-color: var(--lightGrey);
+  }
+}
+
+.taskTableCell {
+  height: calc(100% - 1px);
+  width: calc(100% - 1px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid black;
+  border-color: black;
+}
